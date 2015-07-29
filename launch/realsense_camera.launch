@@ -20,7 +20,12 @@
     The depth-sensor principal point in pixels. The parameters vary with the resolution setting.
     x, y = 320.000000, 240.000000
     -->
-    
+    <group ns="depth_camera_info">
+		<rosparam command="load" file="$(find realsense_camera)/camera_info/depth.yaml" />
+	</group>
+	<group ns="rgb_camera_info">
+		<rosparam command="load" file="$(find realsense_camera)/camera_info/rgb.yaml" />
+	</group>
     <arg name="camera" default="camera" />
     <arg name="rgb_frame_id" default="$(arg camera)_rgb_optical_frame" />
     <arg name="depth_frame_id" default="$(arg camera)_depth_optical_frame" />
